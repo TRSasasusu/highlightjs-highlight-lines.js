@@ -3,6 +3,16 @@ Line highlighting plugin for Highlight.js
 
 **[DEMO](https://trsasasusu.github.io/highlightjs-highlight-lines.js/)**
 
+## Install
+
+Get from CDN,
+
+```html
+<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js/highlightjs-highlight-lines.js"></script>
+```
+
+or download from this repository.
+
 ## Usage
 Include `highlightjs-highlight-lines.js` after highlight.js.
 
