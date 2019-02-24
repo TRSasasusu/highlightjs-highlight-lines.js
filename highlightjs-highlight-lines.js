@@ -6,17 +6,6 @@
         w.hljs.highlightLinesCode = highlightLinesCode;
     }
 
-    /*
-    [
-        [
-        {
-            start: 1,
-            end: 3,
-            color: 'yellow',
-        },
-        ],
-    ]
-    */
     function initHighlightLinesOnLoad(options) {
         function callHighlightLinesCode() {
             var codes = d.getElementsByClassName('hljs');
@@ -37,7 +26,6 @@
 
     function highlightLinesCode(code, options) {
         code.innerHTML = code.innerHTML.replace(/[ \S]*\n/gm, function(match) {
-            //return '<div class="highlight-line">' + match.slice(0, -1) + '<br /></div>';
             return '<div class="highlight-line">' + match + '</div>';
         });
 
