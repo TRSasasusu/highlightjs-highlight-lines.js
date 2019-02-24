@@ -10,7 +10,7 @@ Line highlighting plugin for [Highlight.js](https://highlightjs.org/)
 Get from CDN,
 
 ```html
-<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.3/highlightjs-highlight-lines.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
 ```
 
 or download from this repository.
