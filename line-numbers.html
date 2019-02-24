@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
-    <script src="./highlightjs-highlight-lines.min.js"></script>
+    <script src="./highlightjs-highlight-lines.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
         hljs.initLineNumbersOnLoad();
         hljs.initHighlightLinesOnLoad([
             [{start: 1, end: 3, color: '#555'}, {start: 6, end: 6, color: 'yellow'},],
             [{start: 2, end: 3, color: 'rgba(255, 255, 255, 0.2)'},],
+            [{start: 2, end: 4, color: 'blue'},],
         ]);
     </script>
     <style>
@@ -66,6 +67,20 @@ def main():
 
 
 if __name__ == '__main__':
-    main()</pre>
+    main()</code>
+        </pre>
+
+        <h2>Example 3 (scroll)</h2>
+        <div style="width: 100px;">
+            <pre>
+                <code>#include &lt;iostream&gt;
+auto main() -&gt; int {
+    using namespace std;
+    cout &lt;&lt; "this is too long sentence......" &lt;&lt; endl;
+    return 0;
+}
+                </code>
+            </pre>
+        </div>
     </body>
 </html>
