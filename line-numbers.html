@@ -5,17 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
-    <script src="./highlightjs-highlight-lines.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script src="./highlightjs-highlight-lines.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
         hljs.initHighlightLinesOnLoad([
             [{start: 1, end: 3, color: '#555'}, {start: 6, end: 6, color: 'yellow'},],
             [{start: 2, end: 3, color: 'rgba(255, 255, 255, 0.2)'},],
         ]);
     </script>
+    <style>
+        /* for block of numbers */
+        td.hljs-ln-numbers {
+            text-align: center;
+            color: #ccc;
+            border-right: 1px solid #999;
+            vertical-align: top;
+            padding-right: 5px;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        td.hljs-ln-code {
+            padding-left: 10px;
+        }
+
+        code {
+            white-space: pre-wrap;
+            overflow: auto;
+        }
+    </style>
     </head>
     <body>
-        <h1>highlightjs-highlight-lines.js Examples</h1>
+        <h1>highlightjs-highlight-lines.js Examples with <a href="https://github.com/wcoder/highlightjs-line-numbers.js/">highlightjs-line-numbers.js</a></h1>
         <h2>Example 1</h2>
         <pre>
             <code>#include &lt;stdio.h&gt;

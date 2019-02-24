@@ -3,12 +3,14 @@ Line highlighting plugin for Highlight.js
 
 **[DEMO](https://trsasasusu.github.io/highlightjs-highlight-lines.js/)**
 
+**[DEMO with highlightjs-line-numbers.js](https://trsasasusu.github.io/highlightjs-highlight-lines.js/line-numbers.html)**
+
 ## Install
 
 Get from CDN,
 
 ```html
-<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.0.1/highlightjs-highlight-lines.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.0/highlightjs-highlight-lines.min.js"></script>
 ```
 
 or download from this repository.

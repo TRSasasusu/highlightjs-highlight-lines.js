@@ -25,6 +25,37 @@
     }
 
     function highlightLinesCode(code, options) {
+        function highlightLinesCodeWithNumbers() {
+            var tables = code.getElementsByTagName('table');
+            if(tables.length == 0) {
+                return;
+            }
+
+            clearInterval(interval_id);
+
+            var table = tables[0];
+            table.style.width = '100%';
+            var hljs_ln_numbers = table.getElementsByClassName('hljs-ln-numbers');
+            for(var hljs_ln_number of hljs_ln_numbers) {
+                hljs_ln_number.style.width = '2em';
+            }
+
+            if(options === undefined) {
+                return;
+            }
+            var lines = code.getElementsByTagName('tr');
+            for(var option of options) {
+                for(var j = option.start; j <= option.end; ++j) {
+                    lines[j].style.backgroundColor = option.color;
+                }
+            }
+        }
+
+        if(hljs.hasOwnProperty('initLineNumbersOnLoad')) {
+            var interval_id = setInterval(highlightLinesCodeWithNumbers, 1000);
+            return;
+        }
+
         code.innerHTML = code.innerHTML.replace(/[ \S]*\n/gm, function(match) {
             return '<div class="highlight-line">' + match + '</div>';
         });
@@ -39,4 +70,5 @@
             }
         }
     }
+
 }(window, document));
