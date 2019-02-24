@@ -1,0 +1,41 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+    <script src="./highlightjs-highlight-lines.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightLinesOnLoad([
+            [{start: 1, end: 3, color: '#555'}, {start: 6, end: 6, color: 'yellow'},],
+            [{start: 2, end: 3, color: 'rgba(255, 255, 255, 0.2)'},],
+        ]);
+    </script>
+    </head>
+    <body>
+        <h1>highlightjs-highlight-lines.js Examples</h1>
+        <h2>Example 1</h2>
+        <pre>
+            <code>#include &lt;stdio.h&gt;
+
+void print_text(char[] text) {
+    printf("%s\n", text);
+}
+
+int main() {
+    printf("hoge\n");
+    print_text("foobar");
+    return 0;
+}</code>
+        </pre>
+        <h2>Example 2 (using transparency)</h2>
+        <pre>
+            <code># coding: utf-8
+
+def main():
+    print('hoge')
+
+
+if __name__ == '__main__':
+    main()</pre>
+    </body>
+</html>
