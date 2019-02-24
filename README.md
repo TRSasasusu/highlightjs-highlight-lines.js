@@ -8,17 +8,17 @@ Line highlighting plugin for Highlight.js
 Get from CDN,
 
 ```html
-<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js/highlightjs-highlight-lines.js"></script>
+<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.0.1/highlightjs-highlight-lines.min.js"></script>
 ```
 
 or download from this repository.
 
 ## Usage
-Include `highlightjs-highlight-lines.js` after highlight.js.
+Include `highlightjs-highlight-lines.min.js` after highlight.js.
 
 ```html
 <script src="path/to/highlight.min.js"></script>
-<script src="path/to/highlightjs-highlight-lines.js"></script>
+<script src="path/to/highlightjs-highlight-lines.min.js"></script>
 ```
 
 Initialize after highlight.js.
