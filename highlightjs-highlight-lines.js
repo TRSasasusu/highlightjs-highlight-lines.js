@@ -56,7 +56,7 @@
             return;
         }
 
-        code.innerHTML = code.innerHTML.replace(/[ \S]*\n/gm, function(match) {
+        code.innerHTML = code.innerHTML.replace(/([ \S]*\n|[ \S]*$)/gm, function(match) {
             return '<div class="highlight-line">' + match + '</div>';
         });
 
