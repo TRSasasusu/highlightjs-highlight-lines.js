@@ -24,10 +24,31 @@
         }
     }
 
-    function highlightLinesCode(code, options) {
+    function highlightLinesCode(code, options, has_numbers) {
+        function highlightLinesCodeWithoutNumbers() {
+            code.innerHTML = code.innerHTML.replace(/([ \S]*\n|[ \S]*$)/gm, function(match) {
+                    return '<div class="highlight-line">' + match + '</div>';
+                    });
+
+            if(options === undefined) {
+                return;
+            }
+            var lines = code.getElementsByClassName('highlight-line');
+            var scroll_width = code.scrollWidth;
+            for(var option of options) {
+                for(var j = option.start; j <= option.end; ++j) {
+                    lines[j].style.backgroundColor = option.color;
+                    lines[j].style.minWidth = scroll_width + 'px';
+                }
+            }
+        }
         function highlightLinesCodeWithNumbers() {
             var tables = code.getElementsByTagName('table');
             if(tables.length == 0) {
+                if(count++ > 0) {
+                    clearInterval(interval_id);
+                    highlightLinesCodeWithoutNumbers();
+                }
                 return;
             }
 
@@ -51,26 +72,13 @@
             }
         }
 
-        if(hljs.hasOwnProperty('initLineNumbersOnLoad')) {
-            var interval_id = setInterval(highlightLinesCodeWithNumbers, 1000);
+        if(hljs.hasOwnProperty('initLineNumbersOnLoad') && has_numbers !== false) {
+            var count = 10;
+            var interval_id = setInterval(highlightLinesCodeWithNumbers, 100);
             return;
         }
 
-        code.innerHTML = code.innerHTML.replace(/([ \S]*\n|[ \S]*$)/gm, function(match) {
-            return '<div class="highlight-line">' + match + '</div>';
-        });
-
-        if(options === undefined) {
-            return;
-        }
-        var lines = code.getElementsByClassName('highlight-line');
-        var scroll_width = code.scrollWidth;
-        for(var option of options) {
-            for(var j = option.start; j <= option.end; ++j) {
-                lines[j].style.backgroundColor = option.color;
-                lines[j].style.minWidth = scroll_width + 'px';
-            }
-        }
+        highlightLinesCodeWithoutNumbers();
     }
 
 }(window, document));

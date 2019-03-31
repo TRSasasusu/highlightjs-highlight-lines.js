@@ -55,5 +55,8 @@ hljs.initHighlightLinesOnLoad([
 ]);
 ```
 
+### Using hljs.highlightBlock
+See **[DEMO using hljs.highlightBlock](https://trsasasusu.github.io/highlightjs-highlight-lines.js/use-highlight-block.html)**.
+
 ## License
 MIT License
