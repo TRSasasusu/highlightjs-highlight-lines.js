@@ -28,10 +28,10 @@ Include `highlightjs-highlight-lines.min.js` after highlight.js.
 Initialize after highlight.js.
 
 ```js
-hljs.initHighlightingOnLoad();
-hljs.initHighlightLinesOnLoad([
-    [{start: 1, end: 3, color: '#555'}, {start: 6, end: 6, color: 'yellow'},], // Highlight some lines in the first code block.
-    [{start: 2, end: 3, color: 'rgba(255, 255, 255, 0.2)'},], // Highlight some lines in the second code block.
+hljs.highlightAll();
+hljs.highlightLinesAll([
+    [{start: 2, end: 4, color: '#555'}, {start: 7, end: 7, color: 'yellow'},], // Highlight some lines in the first code block.
+    [{start: 3, end: 4, color: 'rgba(255, 255, 255, 0.2)'},], // Highlight some lines in the second code block.
 ]);
 ```
 
@@ -47,16 +47,16 @@ Include `highlightjs-highlight-lines.min.js` after highlight.js and highlightjs-
 Initialize after highlight.js and highlightjs-line-numbers.js.
 
 ```js
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
 hljs.initLineNumbersOnLoad();
-hljs.initHighlightLinesOnLoad([
-    [{start: 1, end: 3, color: '#555'}, {start: 6, end: 6, color: 'yellow'},], // Highlight some lines in the first code block.
-    [{start: 2, end: 3, color: 'rgba(255, 255, 255, 0.2)'},], // Highlight some lines in the second code block.
+hljs.highlightLinesAll([
+    [{start: 2, end: 4, color: '#555'}, {start: 7, end: 7, color: 'yellow'},], // Highlight some lines in the first code block.
+    [{start: 3, end: 4, color: 'rgba(255, 255, 255, 0.2)'},], // Highlight some lines in the second code block.
 ]);
 ```
 
-### Using hljs.highlightBlock
-See **[DEMO using hljs.highlightBlock](https://trsasasusu.github.io/highlightjs-highlight-lines.js/use-highlight-block.html)**.
+### Using hljs.highlightElement
+See **[DEMO using hljs.highlightElement](https://trsasasusu.github.io/highlightjs-highlight-lines.js/use-highlight-element.html)**.
 
 ## License
 MIT License

@@ -9,16 +9,16 @@
     <script src="./highlightjs-highlight-lines.js"></script>
     <script>
         var generateCodeWithoutNumbers = function(code) {
-            code.innerHTML = 'hljs.highlightBlock(code);\nhljs.highlightLinesCode(code, [{start: 1, end: 1, color: \'yellow\'}], false); /* the last argument is `has_numbers` */';
+            code.innerHTML = 'hljs.highlightElement(code);\nhljs.highlightLinesElement(code, [{start: 2, end: 2, color: \'yellow\'}], false); /* the last argument is `has_numbers` */';
             hljs.highlightElement(code);
-            hljs.highlightLinesCode(code, [{start: 1, end: 1, color: 'yellow'}], false);
+            hljs.highlightLinesElement(code, [{start: 2, end: 2, color: 'yellow'}], false);
         };
 
         var generateCodeWithNumbers = function(code) {
-            code.innerHTML = 'hljs.highlightBlock(code);\nhljs.lineNumbersBlock(code);\nhljs.highlightLinesCode(code, [{start: 2, end: 2, color: \'yellow\'}], true); /* the last argument is `has_numbers` */';
+            code.innerHTML = 'hljs.highlightElement(code);\nhljs.lineNumbersBlock(code);\nhljs.highlightLinesElement(code, [{start: 3, end: 3, color: \'yellow\'}], true); /* the last argument is `has_numbers` */';
             hljs.highlightElement(code);
             hljs.lineNumbersBlock(code);
-            hljs.highlightLinesCode(code, [{start: 2, end: 2, color: 'yellow'}], true);
+            hljs.highlightLinesElement(code, [{start: 3, end: 3, color: 'yellow'}], true);
         };
     </script>
     <style>

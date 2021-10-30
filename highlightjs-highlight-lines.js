@@ -2,8 +2,31 @@
     'use strict';
 
     if(w.hljs) {
-        w.hljs.initHighlightLinesOnLoad = initHighlightLinesOnLoad;
-        w.hljs.highlightLinesCode = highlightLinesCode;
+        w.hljs.highlightLinesAll = highlightLinesAll;
+        w.hljs.highlightLinesElement = highlightLinesElement;
+
+        /* deprecated */
+        w.hljs.initHighlightLinesOnLoad = initHighlightLinesOnLoadWithDeprecated;
+        w.hljs.highlightLinesCode = highlightLinesCodeWithDeprecated;
+    }
+
+    function highlightLinesAll(options) {
+        for(var i = 0; i < options.length; ++i) {
+            for(var option of options[i]) {
+                --option.start;
+                --option.end;
+            }
+        }
+        initHighlightLinesOnLoad(options);
+    }
+
+    var initHighlightLinesOnLoadWithDeprecatedCalled = false;
+    function initHighlightLinesOnLoadWithDeprecated(options) {
+        if(!initHighlightLinesOnLoadWithDeprecatedCalled) {
+            console.log('hljs.initHighlightLinesOnLoad is deprecated. Please use hljs.highlightLinesAll')
+            initHighlightLinesOnLoadWithDeprecatedCalled = true;
+        }
+        initHighlightLinesOnLoad(options)
     }
 
     function initHighlightLinesOnLoad(options) {
@@ -22,6 +45,23 @@
                 callHighlightLinesCode();
             });
         }
+    }
+
+    function highlightLinesElement(code, options, has_numbers) {
+        for(var option of options) {
+            --option.start;
+            --option.end;
+        }
+        highlightLinesCode(code, options, has_numbers);
+    }
+
+    var highlightLinesCodeWithDeprecatedCalled = false;
+    function highlightLinesCodeWithDeprecated(code, options, has_numbers) {
+        if(!highlightLinesCodeWithDeprecatedCalled) {
+            console.log('hljs.highlightLinesCode is deprecated. Please use hljs.highlightLinesElement')
+            highlightLinesCodeWithDeprecatedCalled = true;
+        }
+        highlightLinesCode(code, options, has_numbers)
     }
 
     function highlightLinesCode(code, options, has_numbers) {
