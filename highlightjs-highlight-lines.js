@@ -73,12 +73,16 @@
             if(options === undefined) {
                 return;
             }
+
+            var paddingLeft = parseInt(window.getComputedStyle(code).paddingLeft);
+            var paddingRight = parseInt(window.getComputedStyle(code).paddingRight);
+
             var lines = code.getElementsByClassName('highlight-line');
             var scroll_width = code.scrollWidth;
             for(var option of options) {
                 for(var j = option.start; j <= option.end; ++j) {
                     lines[j].style.backgroundColor = option.color;
-                    lines[j].style.minWidth = scroll_width + 'px';
+                    lines[j].style.minWidth = scroll_width - paddingLeft - paddingRight + 'px';
                 }
             }
         }
