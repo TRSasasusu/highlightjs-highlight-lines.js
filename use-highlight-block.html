@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
     <script src="./highlightjs-highlight-lines.js"></script>
     <script>
         var generateCodeWithoutNumbers = function(code) {
             code.innerHTML = 'hljs.highlightBlock(code);\nhljs.highlightLinesCode(code, [{start: 1, end: 1, color: \'yellow\'}], false); /* the last argument is `has_numbers` */';
-            hljs.highlightBlock(code);
+            hljs.highlightElement(code);
             hljs.highlightLinesCode(code, [{start: 1, end: 1, color: 'yellow'}], false);
         };
 
         var generateCodeWithNumbers = function(code) {
             code.innerHTML = 'hljs.highlightBlock(code);\nhljs.lineNumbersBlock(code);\nhljs.highlightLinesCode(code, [{start: 2, end: 2, color: \'yellow\'}], true); /* the last argument is `has_numbers` */';
-            hljs.highlightBlock(code);
+            hljs.highlightElement(code);
             hljs.lineNumbersBlock(code);
             hljs.highlightLinesCode(code, [{start: 2, end: 2, color: 'yellow'}], true);
         };

@@ -45,7 +45,7 @@
         function highlightLinesCodeWithNumbers() {
             var tables = code.getElementsByTagName('table');
             if(tables.length == 0) {
-                if(count++ > 0) {
+                if(count-- < 0) {
                     clearInterval(interval_id);
                     highlightLinesCodeWithoutNumbers();
                 }
@@ -73,7 +73,7 @@
         }
 
         if(hljs.hasOwnProperty('initLineNumbersOnLoad') && has_numbers !== false) {
-            var count = 10;
+            var count = 100;
             var interval_id = setInterval(highlightLinesCodeWithNumbers, 100);
             return;
         }
